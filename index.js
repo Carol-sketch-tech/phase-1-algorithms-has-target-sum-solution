@@ -3,8 +3,10 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
   for (let i=0;i<array.length; i++){
+    // n steps
     const complement =target -array[i]
     for(let j = i + 1;j < array.length; j++){
+      // n*n steps
       if (array[j]=== complement)return true 
     }
   }
@@ -15,11 +17,15 @@ function hasTargetSum(array, target) {
 
 /* 
   Write the Big O time complexity of your function here
+  runtime: o(n^2)
+  cpace complexity: 
 */
 
 /* 
   Add your pseudocode here
   Given an array 
+  create an object to keep trach of numbers we've already seen 
+  for example seenNumbers ={}-an empty object. when an array is iterated through, the number is the array already seen are stored in the empty object.
   iterate through each number in the array 
   for each number in  the array, identify the complement that when added to our number 
   the sum is the target.(complement = target - num)
