@@ -1,6 +1,17 @@
+// corrected version of the question in the previous lab.
+
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (let i=0;i<array.length; i++){
+    const complement =target -array[i]
+    for(let j = i + 1;j < array.length; j++){
+      if (array[j]=== complement)return true 
+    }
+  }
+ return false;
 }
+//make a function that checks of two numbers in an array sums to some target number.
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -8,6 +19,12 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  Given an array 
+  iterate through each number in the array 
+  for each number in  the array, identify the complement that when added to our number 
+  the sum is the target.(complement = target - num)
+  check if the number is in the array
+  if so return true.
 */
 
 /*
